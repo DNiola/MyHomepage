@@ -1,0 +1,25 @@
+<div class="footer_main_container padd_left_right">
+
+    <img class="blue-shadow" src="../../assets/img/bg´s/blue-footer.png">
+    <div style="height: 90px;">
+        <a class="logo_a_container" href="../../index.html">
+            <img class="logo" src="../../assets/icons/logo.png">
+        </a>
+        <div class="footer_links_container">
+            <a routerLink="/imprint" class="impressum">Imprint</a>
+            <div class="impressum">|</div>
+            <a routerLink="/data-protection" class="impressum">Data protection</a>
+        </div>
+    </div>
+    <span>© Davide Niola 2023</span>
+    <div class="footer_icons_container">
+        <a *ngFor="let icon of footerIcons;  let i = index;" href="{{icon.url}}">
+            <img src="../../assets/icons/{{icon.icon}}.svg">
+        </a>
+    </div>
+    <div class="mobile_footer_links_container ">
+        <a routerLink="/imprint" class="impressum_for_mobile">Imprint</a>
+        <div class="impressum_for_mobile">|</div>
+        <a routerLink="/data-protection" class="impressum_for_mobile"> Dataprotection</a>
+    </div>
+</div>

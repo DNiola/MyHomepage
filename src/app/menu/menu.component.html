@@ -1,0 +1,35 @@
+<header class="header_container">
+    <a [ngClass]="{'d-none': headerLinksOpen}" href="../../index.html">
+        <img class="logo_img" src="../../assets/icons/logo.png">
+    </a>
+    <div class="header_links" >
+        <a *ngFor="let link of headerLinks; let i = index;" (click)="decorationLink(i)" routerLink="/"
+            [ngStyle]="{'right.px': 20 + (i * 100)}" [ngClass]="{'active': i === activeLink}">
+            {{link}}
+            <div *ngIf="linkDecoration[i]" class="blue_line"></div>
+        </a>
+    </div>
+    <div class="mobile_header_links">
+        <button [ngClass]="{'d-none': headerLinksOpen}" [cdkMenuTriggerFor]="menu" (click)="openMobileLinksTemplate()" class="example_standalone_trigger">
+            <img src="../../assets/icons/menu.png">
+        </button>
+        <ng-template #menu>
+            <div class="example-menu slide-in-right" cdkMenu>
+                <div class="header_header_links_mobile">
+                    <a href="#" class="logo_a_container">
+                        <img class="logo_img" src="../../assets/icons/logo.png">
+                    </a>
+                    <div (click)="closeMobileLinks()" cdkMenuItem class="close_button">
+                        <img src="../../assets/icons/close-menu.svg">
+                    </div>
+                </div>
+                <a class="example-menu-item" cdkMenuItem *ngFor="let link of headerLinksMobile; let i = index;"
+                    (click)="decorationLink(i) " [ngStyle]="{'right.px': 20 + (i * 100)}" routerLink="/"
+                    [ngClass]="{'active': i === activeLink}">
+                    <b>{{link}}</b>
+                    <div *ngIf="linkDecoration[i]" class="blue_line"></div>
+                </a>
+            </div>
+        </ng-template>
+    </div>
+</header>

@@ -1,0 +1,40 @@
+<div class="intro_container">
+    <div class="blob_countainer">
+        <img class="left" src="../../assets/img/bg´s/blue-intro.png">
+        <div class="intro_span_container padd_left_right">
+            <span class="rotate">
+                <span class="slide-in-right">I am</span>
+            </span>
+            <div class="intro_name_container">
+                <h1 class=" slide-in-right">Niola Davide</h1>
+                <span class="color-profession slide-in-bottom">FRONTEND DEVELOPER</span>
+            </div>
+            <button class="slide-in-elliptic-top-fwd" mat-raised-button color="primary" (click)="scrollToElement('contact')">Let´s talk!</button>
+        </div>
+        <img class="right" src="../../assets/img/bg´s/green-intro.png">
+    </div>
+    <div class="intro_end_container">
+        <div >
+            <img class="long_blue_line" src="assets/img/LINE.svg">
+            <a *ngFor="let icon of introIcons;  let i = index;" href="{{icon.url}}">
+                <img class="icon_for_mobile{{i}}" src="../../assets/icons/{{icon.icon}}.svg" [ngStyle]="{'left.px': 200 + (i * 80)}">
+            </a>
+        </div>
+        <div class="wave rotate_text">
+            <span style="--i:1;">S</span>
+            <span style="--i:2;">c</span>
+            <span style="--i:3;">r</span>
+            <span style="--i:4;">o</span>
+            <span style="--i:5;">l</span>
+            <span style="--i:6;">l</span>
+            <span style="--i:7;"> </span>
+            <span style="--i:8;">D</span>
+            <span style="--i:9;">o</span>
+            <span style="--i:10;">w</span>
+            <span style="--i:11;">n</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.99992 12.172L13.6569 7.515C14.0474 7.12453 14.6805 7.12453 15.0709 7.515C15.4614 7.90547 15.4614 8.53854 15.0709 8.929L8.70703 15.2929C8.31651 15.6834 7.68334 15.6834 7.29282 15.2929L0.928924 8.929C0.538458 8.53853 0.538458 7.90547 0.928924 7.515C1.31939 7.12453 1.95246 7.12453 2.34292 7.515L6.99992 12.172V1C6.99992 0.447715 7.44764 0 7.99992 0C8.55221 0 8.99992 0.447715 8.99992 1V12.172Z" fill="white" />
+            </svg>
+        </div>
+    </div>
+</div>

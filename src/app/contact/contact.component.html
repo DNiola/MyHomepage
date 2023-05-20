@@ -1,0 +1,60 @@
+<div class="contact_main_container padd_left_right">
+    <div class="contact_header_container">
+        <h2>Contact</h2>
+        <div class="contact_line"></div>
+    </div>
+    <div class="contact_subSection_posi">
+        <div class="sub_header_posi">
+            <div class="contact_subheader_container">
+                <img src="../../assets/img/LINE5.svg">
+                <h2>Got a problem to solve?</h2>
+            </div>
+            <p>I'm ready for the next challenge! If you're looking for a reliable frontend developer who creates
+                creative and user-friendly web applications, then I'm your go-to person</p>
+            <p>need a frontend developer? <b>contact me!</b> </p>
+        </div>
+        <div>
+            <form autocomplete="off" [formGroup]="form" (submit)="sendMail()" ngNativeValidate>
+                <div class="input_container">
+                    <input formControlName="name"required type="text" name="name" #nameField placeholder="Your name" maxlength="20" minlength="3"
+                    (input)="validateInput(form.controls.name)" [ngClass]=
+                    "{'valid-input': form.controls.name.valid && form.controls.name.touched,
+                    'invalid-input': form.controls.name.invalid && form.controls.name.touched }">
+                    <span class="error" *ngIf="form.controls.name.errors?.['minlength']">
+                        Name must be at least 3 characters long.
+                    </span>
+                </div>
+                <div class="input_container">
+                    <input formControlName="email" required type="email" name="email" #emailField placeholder="Your email" maxlength="30" 
+                    (input)="validateInput(form.controls.email)" [ngClass]=
+                    "{'valid-input': form.controls.email.valid && form.controls.email.touched, 
+                    'invalid-input': form.controls.email.invalid && form.controls.email.touched}">
+                    <span class="error" *ngIf="form.controls.email.errors?.['email']">
+                        Please enter a valid email address.
+                    </span>
+                </div>
+                <div class="input_container">
+                    <textarea formControlName="message" required name="message" #messageField placeholder="Your message" class="input-icon-posi-top" minlength="10" maxlength="1000"
+                    (input)="validateInput(form.controls.message)" [ngClass]=
+                    "{'valid-input': form.controls.message.valid && form.controls.message.touched,
+                    'invalid-input': form.controls.message.invalid && form.controls.message.touched }">
+                    </textarea>
+                    <span class="error" *ngIf="form.controls.message.errors?.['minlength']">
+                        Message must be at least 10 characters long.
+                    </span>
+                    <span class="error" *ngIf="form.controls.message.errors?.['maxlength']">
+                        Message must be at most 1000 characters long.
+                    </span>
+                    <span class="emailSendTrue" *ngIf="emailWasSend">
+                        E-mail was be send. Thank you! I will contact you as soon as possible.
+                    </span>
+                </div>
+                <button mat-raised-button color="primary" #sendButton>Contact me :)</button>
+            </form>
+            <svg (click)="scrollToElement('intro')" width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 15.828L13.343 20.485C12.9525 20.8755 12.3194 20.8755 11.929 20.485C11.5385 20.0945 11.5385 19.4615 11.929 19.071L18.2928 12.7071C18.6834 12.3166 19.3165 12.3166 19.7071 12.7071L26.071 19.071C26.4614 19.4615 26.4614 20.0945 26.071 20.485C25.6805 20.8755 25.0474 20.8755 24.657 20.485L20 15.828L20 27C20 27.5523 19.5522 28 19 28C18.4477 28 18 27.5523 18 27L18 15.828Z" fill="white" />
+                <rect x="1" y="1" width="37" height="37" rx="18.5" stroke="white" stroke-width="2" />
+            </svg>
+        </div>
+    </div>
+</div>

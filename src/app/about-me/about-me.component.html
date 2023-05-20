@@ -1,0 +1,35 @@
+<div class="about_me_container">
+    <div class="padd_left">
+        <div [@slideIn]="isVisible[0] ? 'visible': 'hidden'" class="animate">
+            <h2>About me</h2>
+            <span>
+                As a passionate frontend developer, I love creating creative and engaging web applications that meet the
+                needs of users. In my free time, I enjoy working on my own projects to further expand my expertise and
+                take on new challenges.
+            </span>
+        </div>
+        <div [@slideIn]="isVisible[1] ? 'visible': 'hidden'" class="abt_me_info animate">
+            <img src="../../assets/icons/light_blue.svg">
+            <span>
+                As a frontend developer, I understand the importance of creativity and the constant pursuit of new
+                technologies. In order to continuously expand my knowledge, I focus on developing user-friendly and
+                aesthetically appealing web applications. My goal is to create solutions that fully meet the
+                requirements of users and exceed their expectations.
+            </span>
+        </div>
+        <div [@slideIn]="isVisible[2] ? 'visible': 'hidden'" class="abt_me_info animate">
+            <img src="../../assets/icons/puzzle_green.svg">
+            <span>Teamwork and initiative are two important aspects for me to be successful in web development. I value
+                collaboration with colleagues, and at the same time, I am able to work independently and take
+                responsibility for my tasks. Flexibility and adaptability help me to quickly adjust to new requirements
+                and challenges.
+            </span>
+        </div>
+    </div>
+    <div [@fadeIn]="isVisible[0] ? 'visible': 'hidden'" class="abt_me_imgs padd_left_right">
+        <img src="../../assets/img/bg´s/purple-shadow.png">
+        <img class="absolute" src="../../assets/img/me.png">
+        <img src="../../assets/img/bg´s/green-shadow.png">
+    </div>
+    <img class="slide_img" src="../../assets/img/abt_me_slide.png">
+</div>

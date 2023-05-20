@@ -1,0 +1,12 @@
+body{
+    margin: 0;
+}
+
+.imprit_main_container{
+    padding-top: 100px;
+    height: calc(100vh - 100px);
+    color: white;
+    @media screen and (max-height: 600px) {
+        height: calc(120vh - 100px);
+    }
+}

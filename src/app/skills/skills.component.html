@@ -1,0 +1,22 @@
+<div class="skill_main_container">
+  <div class="skill_icon_position">
+    <div class="skill_icon_container padd_left_right">
+      <div *ngFor="let icon of skillsIcons; let i = index" class="div{{i + 1}} seeIcon" [@rotate]="isVisible[i] ? 'visible': 'hidden'">
+        <img *ngIf="isVisible[i]" src="../../assets/icons/{{icon.icon}}">
+        <span *ngIf="isVisible[i]">{{icon.name}}</span>
+      </div>
+    </div>
+  </div>
+  <div [@slideIn]="isVisible[5] ? 'visible': 'hidden'" class="skill_text_container padd_left_right">
+    <h1>Skills</h1>
+    <img class="long_blue_line_right" src="assets/img/LINE2.svg">
+    <span>
+      I have excellent proficiency in JavaScript, TypeScript, HTML, and CSS/SCSS, and have good knowledge of
+      Angular, Material Design, Firebase, and Git. With these skills, I am able to develop attractive and user-friendly
+      web applications, and refine my projects. I am committed to continuously expanding my knowledge in all areas and
+      improving my skills and abilities to make valuable contributions.
+    </span>
+    <button class="hidden_for_mobile" mat-raised-button color="primary" (click)="scrollToElement('contact')">Get in touch!</button>
+  </div>
+ <button class="for_mobile" mat-raised-button color="primary" (click)="scrollToElement('contact')">Get in touch!</button>
+</div>

@@ -1,0 +1,44 @@
+<div class="portfolio_main_container">
+    <img class="green-shadow" src="../../assets/img/bg´s/green-portfolio.png">
+    <div [@slideIn]="isVisible[0] ? 'visible': 'hidden'" class="portfolio_h1_position animate">
+        <img src="../../assets/img/LINE3.svg">
+        <h1>Portfolio</h1>
+    </div>
+    <div class="padd_left_right">
+        <div class="portfolio_projects_container">
+            <span class="animate" [@slideIn]="isVisible[1] ? 'visible': 'hidden'">
+                Here you will find a selection of my
+                projects. Each of these projects was an opportunity for
+                me to expand my skills and knowledge and to take on new challenges. These projects are linked below and
+                have been implemented with great dedication and passion.
+            </span>
+            <div *ngFor="let project of projectsImg; let i = index" class="portfolio_project">
+                <div [@fadeIn]="isVisible[i + 2] ? 'visible': 'hidden'" class="laptop_frame_container animate">
+                    <img src="../../assets/img/portfolio/{{project.imgs}}.png">
+                    <img class="laptop_shadow" src="../../assets/img/portfolio/portfolio-shadow.png">
+                </div>
+                <div class="project_hover_container">
+                    <img src="../../assets/img/portfolio/{{project.img}}.png">
+                    <div class="project_button_posi">
+                        <div>
+                            <a class="btn_transparent" mat-flat-button href="https://www.{{project.git}}" target="_blank" color="primary">
+                                Github
+                            </a>
+                        </div>
+                        <div>
+                            <a mat-flat-button href="https://www.{{project.url}}" target="_blank" color="primary">
+                                LiveTest
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project_info_container">
+                        <h3>{{project.title}}</h3>
+                        <span>{{project.info}}</span>
+                        <b>{{project.subInfo}}</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img class="blue_shadow" src="../../assets/img/bg´s/blue-portfolio.png">
+</div>
