@@ -17,9 +17,6 @@ import { BrowserAnimationsComponent } from '../browser-animations/browser-animat
       transition('hidden => visible', [
         animate('0.5s')
       ]),
-      transition('visible => hidden', [
-        animate('0.5s')
-      ]),
     ]),
     trigger('slideIn', [
       state('hidden', style({
@@ -30,9 +27,6 @@ import { BrowserAnimationsComponent } from '../browser-animations/browser-animat
         transform: 'translateX(0)'
       })),
       transition('hidden => visible', [
-        animate('0.5s')
-      ]),
-      transition('visible => hidden', [
         animate('0.5s')
       ]),
     ]),
@@ -56,7 +50,7 @@ export class PortfolioComponent {
       img: 'pepe-full2',
       title: 'PEPE - El Pollo Loco',
       url: 'davide-niola.developerakademie.net/pepe/index.html',
-      git: 'google.com/', // feht noch
+      git: 'github.com/DNiola/El-Polo-Loco',
       info: "In my exciting 2D game, you take on the role of Pepe, a brave hero tasked with saving the little chickens from the menacing Boss Chicken.Collect coins to increase your strength and bottles to defeat the boss, but use them sparingly!",
       subInfo: "JavaScript | HTML | CSS"
     },
@@ -79,18 +73,30 @@ export class PortfolioComponent {
     }
   ]
 
+
+  animationPlayed = [];
   isVisible = [];
   animated = [];
   slideIn = 'hidden';
   section = '.animate';
   BrowserAnimationsComponent: any;
 
+
   constructor(private elementRef: ElementRef, private browserAnimationsComponent: BrowserAnimationsComponent) { }
+
 
   @HostListener("window:scroll", ["$event"])
   onScroll() {
-    let visibility = this.browserAnimationsComponent.checkVisibility(this.section, this.elementRef);
-    this.isVisible = visibility.isVisible;
-    this.animated = visibility.animated;
+    let elementsStatus = this.browserAnimationsComponent.checkVisibility(this.section, this.elementRef);
+    for (let i = 0; i < elementsStatus.length; i++) {
+      if (elementsStatus[i].isVisible && !this.animationPlayed[i]) {
+        this.animationPlayed[i] = true;
+      }
+      if (this.animationPlayed[i]) {
+        elementsStatus[i].isVisible = true;
+      }
+    }
+    this.isVisible = elementsStatus.map(element => element.isVisible);
   }
+
 }

@@ -6,8 +6,6 @@ $color-purple2: #4B47FF;
 $button-blue: #00BEE8;
 $color-green: #1CE6B6;
 
-$media-query-w2100: 2100px;
-$media-query-w1750: 1750px;
 
 .portfolio_main_container {
     height: calc(100vh - 100px);
@@ -15,16 +13,28 @@ $media-query-w1750: 1750px;
     color: white;
     position: relative;
 
+    @media screen and (max-height: 1100px) and (max-width:1200px) {
+        height: calc(120vh - 100px);
+    }
+
+    @media screen and (max-height: 900px) and (max-width:1200px) {
+        height: calc(130vh - 100px);
+    }
+
+    @media screen and (max-height: 1139px) and (max-width:500px) {
+        height: calc(100vh - 100px) !important;
+    }
+
+    @media screen and (max-height: 739px) and (max-width:500px) {
+        height: calc(120vh - 100px) !important;
+    }
+
     @media screen and (max-height: 480px) {
         height: calc(200vh - 100px);
     }
 
     @media screen and (orientation:landscape) and (max-height: 830px) {
         height: calc(140vh - 100px) !important;
-    }
-
-    @media screen and (orientation:landscape) and (max-height: 800px) {
-        height: calc(100vh - 100px) !important;
     }
 
     @media screen and (orientation:landscape) and (max-height: 770px) and (max-width: 1024px) {
@@ -99,7 +109,6 @@ $media-query-w1750: 1750px;
 
     span {
         overflow-wrap: anywhere;
-        // max-width: 1300px;
 
         @media screen and (max-width: 700px) {
             font-size: 15px;
@@ -119,7 +128,6 @@ $media-query-w1750: 1750px;
     }
 }
 
-
 .project_hover_container {
     transform: scale(0);
     height: 1px;
@@ -129,6 +137,7 @@ $media-query-w1750: 1750px;
         transform: scale(0.6);
     }
 }
+
 
 
 .portfolio_project {
@@ -143,7 +152,7 @@ $media-query-w1750: 1750px;
     justify-content: center;
     align-items: center;
     z-index: 1;
-    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.2);
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
 
     @media screen and (max-width: 1200px) {
         width: 100%;
@@ -155,7 +164,7 @@ $media-query-w1750: 1750px;
     }
 
     @media screen and (max-width: 400px) {
-        height: 100px;
+        height: 124px;
     }
 
     &:hover {
@@ -175,6 +184,7 @@ $media-query-w1750: 1750px;
             border-radius: 15px;
 
             img {
+                filter: brightness(0.5);
                 transform: scale(1);
                 transition: 350ms;
                 border-radius: 15px;
@@ -193,16 +203,28 @@ $media-query-w1750: 1750px;
         align-items: center;
         justify-content: center;
 
-        @media screen and (max-width: $media-query-w1750) {
+        @media screen and (max-width: 1750px) {
             height: 250px;
+        }
+
+        @media screen and (max-height: 1000px) {
+            height: 200px;
         }
 
         @media screen and (max-width: 1350px) {
             height: 200px;
         }
 
+        @media screen and (max-height: 799px) {
+            height: 100px;
+        }
+
         @media screen and (max-width: 700px) {
             height: 100px;
+        }
+
+        @media screen and (max-height: 650px) {
+            height: 50px;
         }
 
         @media screen and (max-width: 400px) {
@@ -222,7 +244,7 @@ $media-query-w1750: 1750px;
         margin: 0;
         padding-left: 70px;
 
-        @media screen and (max-width: $media-query-w1750) {
+        @media screen and (max-width: 1750px) {
             font-size: 60px;
             padding-left: 66px;
         }
@@ -315,6 +337,10 @@ $media-query-w1750: 1750px;
         &:hover {
             background: $button-blue;
         }
+    }
+
+    @media screen and (max-width: 12000px) {
+        padding-bottom: 30px;
     }
 
     @media screen and (max-width: 700px) {

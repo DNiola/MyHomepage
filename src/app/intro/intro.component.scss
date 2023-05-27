@@ -5,8 +5,6 @@ $color-purple: #9747FF;
 $color-purple2: #4B47FF;
 $button-blue: #00BEE8;
 
-$media-query-w2100: 2100px;
-$media-query-w1750: 1750px;
 
 .intro_container {
     overflow-x: hidden;
@@ -100,7 +98,7 @@ $media-query-w1750: 1750px;
         margin: 0;
         text-shadow: 3px -3px rgba(0, 0, 0, 1) !important;
 
-        @media screen and (max-width: $media-query-w1750) {
+        @media screen and (max-width: 1750px) {
             font-size: 90px;
         }
 
@@ -187,7 +185,7 @@ $media-query-w1750: 1750px;
     margin: -50px;
     text-shadow: 3px 5px rgb(0, 0, 0, 0.5) !important;
 
-    @media screen and (max-width: $media-query-w1750) {
+    @media screen and (max-width: 1750px) {
         font-size: 60px;
         margin: 0px;
     }
@@ -254,7 +252,7 @@ $media-query-w1750: 1750px;
     font-size: 67px;
     text-shadow: 2px -2px rgba(0, 0, 0, 1) !important;
 
-    @media screen and (max-width: $media-query-w1750) {
+    @media screen and (max-width: 1750px) {
         font-size: 40px;
     }
 
@@ -291,19 +289,6 @@ $media-query-w1750: 1750px;
 }
 
 
-@-webkit-keyframes slide-in-right {
-    0% {
-        transform: translateX(1000px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-
 @keyframes slide-in-right {
     0% {
         transform: translateX(1000px);
@@ -319,19 +304,6 @@ $media-query-w1750: 1750px;
 
 .slide-in-bottom {
     animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
-
-@-webkit-keyframes slide-in-bottom {
-    0% {
-        transform: translateY(1000px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
 }
 
 
@@ -353,19 +325,7 @@ $media-query-w1750: 1750px;
 }
 
 
-@-webkit-keyframes slide-in-elliptic-top-fwd {
-    0% {
-        transform: translateY(-600px) rotateX(-30deg) scale(0);
-        transform-origin: 50% 100%;
-        opacity: 0;
-    }
 
-    100% {
-        transform: translateY(0) rotateX(0) scale(1);
-        transform-origin: 50% 1400px;
-        opacity: 1;
-    }
-}
 
 
 @keyframes slide-in-elliptic-top-fwd {

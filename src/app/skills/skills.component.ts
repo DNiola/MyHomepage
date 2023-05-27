@@ -30,9 +30,6 @@ import { BrowserAnimationsComponent } from '../browser-animations/browser-animat
       transition('hidden => visible', [
         animate('0.2s')
       ]),
-      transition('visible => hidden', [
-        animate('0.2s')
-      ]),
     ]),
   ],
 })
@@ -86,6 +83,7 @@ export class SkillsComponent {
 
   constructor(private elementRef: ElementRef, private browserAnimationsComponent: BrowserAnimationsComponent) { }
 
+  animationPlayed = [];
 
   scrollToElement(element: string) {
     const targetElement = document.getElementById(element);
@@ -97,12 +95,22 @@ export class SkillsComponent {
   }
 
 
-  @HostListener('window:scroll', ['$event'])
+  @HostListener("window:scroll", ["$event"])
   onScroll() {
-    let visibility = this.browserAnimationsComponent.checkVisibility(this.section, this.elementRef);
-    this.isVisible = visibility.isVisible;
-    this.animated = visibility.animated;
+    let elementsStatus = this.browserAnimationsComponent.checkVisibility(this.section, this.elementRef);
+    for (let i = 0; i < elementsStatus.length; i++) {
+      if (elementsStatus[i].isVisible && !this.animationPlayed[i]) {
+        this.animationPlayed[i] = true;
+      }
+      if (this.animationPlayed[i]) {
+        elementsStatus[i].isVisible = true;
+      }
+    }
+    console.log(elementsStatus , this.animationPlayed );
+    
+    this.isVisible = elementsStatus.map(element => element.isVisible);
   }
+
 }
 
 

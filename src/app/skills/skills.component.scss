@@ -5,8 +5,6 @@ $color-purple: #9747FF;
 $color-purple2: #4B47FF;
 $button-blue: #00BEE8;
 
-$media-query-w2100: 2100px;
-$media-query-w1750: 1750px;
 
 
 .d-none {
@@ -21,11 +19,11 @@ $media-query-w1750: 1750px;
     text-align: center;
     grid-column-gap: 190px;
 
-    @media screen and (max-width: $media-query-w2100) {
+    @media screen and (max-width: 2100px) {
         grid-column-gap: 150px
     }
 
-    @media screen and (max-width: $media-query-w1750) {
+    @media screen and (max-width: 1750px) {
         grid-column-gap: 50px
     }
 
@@ -33,7 +31,12 @@ $media-query-w1750: 1750px;
         grid-column-gap: 25px;
 
         span {
+            font-size: 12px;
+        }
+    }
 
+    @media screen and (max-height: 670px) {
+        span {
             font-size: 12px;
         }
     }
@@ -54,8 +57,11 @@ $media-query-w1750: 1750px;
     align-items: center;
     justify-content: center;
     gap: 14px;
-}
 
+    @media screen and (max-height: 670px) {
+        gap: 4px
+    }
+}
 
 .div1 {
     grid-area: 1 / 1 / 2 / 2;
@@ -125,6 +131,12 @@ $media-query-w1750: 1750px;
             width: 40px !important;
         }
     }
+
+    @media screen and (max-height: 670px) {
+        img {
+            width: 40px !important;
+        }
+    }
 }
 
 
@@ -146,7 +158,6 @@ $media-query-w1750: 1750px;
     @media screen and (max-width: 1200px) {
         flex-direction: column-reverse;
         justify-content: center;
-        height: calc(100vh - 200px);
 
         @media screen and (max-width: 400px) {
             height: calc(100vh - 140px);
@@ -159,20 +170,27 @@ $media-query-w1750: 1750px;
 
         .for_mobile {
             display: block;
-            bottom: -75px ;
+            bottom: -75px;
             z-index: 1;
 
             @media screen and (max-width: 700px) {
-                bottom: -42px ;
+                bottom: -42px;
             }
 
             @media screen and (max-width: 500px) {
-                bottom: 20px ;
+                bottom: 20px;
             }
 
-            @media screen and (max-width: 400px) {
+            @media screen and (max-width: 415px) {
+                bottom: 10px;
+            }
 
-                bottom: 10px ;
+            @media screen and (max-width: 380px) {
+                bottom: 43px;
+            }
+
+            @media screen and (max-height: 700px) {
+                bottom: 20px;
             }
 
             @media screen and (min-width: 300px) and (min-height: 1000px) {
@@ -221,7 +239,9 @@ $media-query-w1750: 1750px;
     height: 100%;
 
     img {
-        &:hover {
+        cursor: pointer;
+
+        &:active {
             bottom: 20px;
             animation: bounce-top 0.9s both;
         }
@@ -246,15 +266,19 @@ $media-query-w1750: 1750px;
         font-size: 100px;
         margin: 0;
 
-        @media screen and (max-width: $media-query-w1750) {
+        @media screen and (max-width: 1750px) {
             font-size: 60px;
+        }
+
+        @media screen and (max-height: 670px) {
+            font-size: 50px;
         }
     }
 
     span {
         font-size: 20px;
 
-        @media screen and (max-width: $media-query-w1750) {
+        @media screen and (max-width: 1750px) {
             font-size: 18px;
         }
 
@@ -264,6 +288,10 @@ $media-query-w1750: 1750px;
 
         @media screen and (max-width: 400px) {
             font-size: 14px;
+        }
+
+        @media screen and (max-height: 670px) {
+            font-size: 13px;
         }
     }
 }
@@ -275,13 +303,17 @@ $media-query-w1750: 1750px;
     top: 78px;
     right: 0;
 
-    @media screen and (max-width: $media-query-w1750) {
+    @media screen and (max-width: 1750px) {
         top: 46px;
         width: 222px;
     }
 
     @media screen and (max-width: 500px) {
         width: 144px;
+    }
+
+    @media screen and (max-height: 670px) {
+        top: 33px;
     }
 }
 

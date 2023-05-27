@@ -24,6 +24,7 @@ export class ContactComponent {
   @ViewChild('sendButton') sendButton!: ElementRef;
 
   emailWasSend: boolean;
+  emailSendImg: boolean;
 
   constructor() {
   }
@@ -35,6 +36,7 @@ export class ContactComponent {
     this.fieldsAnimation(emailData);
     await this.fetchEmail(emailData);
     this.fieldsAnimationEnd(emailData);
+    this.clearInputs(emailData)
   }
 
 
@@ -61,20 +63,38 @@ export class ContactComponent {
     fd.append('name', emailData.nameField.value);
     fd.append('email', emailData.emailField.value);
     fd.append('message', emailData.messageField.value);
-    await fetch('https://niola-davide.de/send_mail/send_mail.php',
-      {
-        method: 'POST',
-        body: fd
-      }
-    )
+    const response = await fetch('https://niola-davide.de/send_mail/send_mail.php', {
+      method: 'POST',
+      body: fd
+    });
+    if (response.ok) {
+      this.setEmailStatus();
+    }
+  }
+
+
+  setEmailStatus() {
     this.emailWasSend = true;
+    this.emailSendImg = true;
+    setTimeout(() => {
+      this.emailSendImg = false;
+    }, 2000);
   }
 
 
   fieldsAnimationEnd(emailData) {
+    let button = emailData.sendButton
     emailData.nameField.disabled = false;
     emailData.emailField.disabled = false;
     emailData.messageField.disabled = false;
+    button.disabled = false;
+  }
+
+
+  clearInputs(emailData) {
+    emailData.nameField.value = '';
+    emailData.emailField.value = '';
+    emailData.messageField.value = '';
   }
 
 
@@ -93,5 +113,6 @@ export class ContactComponent {
 
   validateInput(control: AbstractControl) {
     control.markAsTouched();
+    this.emailWasSend = false;
   }
 }

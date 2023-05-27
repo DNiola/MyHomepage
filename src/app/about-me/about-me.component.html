@@ -1,5 +1,5 @@
 <div class="about_me_container">
-    <div class="padd_left">
+    <div class="abt_left_conatiner">
         <div [@slideIn]="isVisible[0] ? 'visible': 'hidden'" class="animate">
             <h2>About me</h2>
             <span>
@@ -26,10 +26,10 @@
             </span>
         </div>
     </div>
-    <div [@fadeIn]="isVisible[0] ? 'visible': 'hidden'" class="abt_me_imgs padd_left_right">
-        <img src="../../assets/img/bg´s/purple-shadow.png">
+    <div [@fadeIn]="isVisible[0] ? 'visible': 'hidden'" class="abt_me_imgs">
+        <img class="purple_img" src="../../assets/img/bg´s/purple-shadow.png">
         <img class="absolute" src="../../assets/img/me.png">
-        <img src="../../assets/img/bg´s/green-shadow.png">
+        <img class="green_img" src="../../assets/img/bg´s/green-shadow.png">
     </div>
     <img class="slide_img" src="../../assets/img/abt_me_slide.png">
 </div>

@@ -17,9 +17,6 @@ import { BrowserAnimationsComponent } from '../browser-animations/browser-animat
       transition('hidden => visible', [
         animate('0.5s')
       ]),
-      transition('visible => hidden', [
-        animate('0.5s')
-      ]),
     ]),
     trigger('slideIn', [
       state('hidden', style({
@@ -32,9 +29,6 @@ import { BrowserAnimationsComponent } from '../browser-animations/browser-animat
       transition('hidden => visible', [
         animate('0.2s')
       ]),
-      transition('visible => hidden', [
-        animate('0.2s')
-      ]),
     ]),
   ],
 })
@@ -42,19 +36,25 @@ import { BrowserAnimationsComponent } from '../browser-animations/browser-animat
 
 export class AboutMeComponent {
   isVisible = [];
-  animated = [];
+  animationPlayed = [];
   slideIn = 'hidden';
   section = '.animate';
-  BrowserAnimationsComponent: any;
-  
+
   constructor(private elementRef: ElementRef, private browserAnimationsComponent: BrowserAnimationsComponent) { }
 
   @HostListener("window:scroll", ["$event"])
-
   onScroll() {
-    let visibility = this.browserAnimationsComponent.checkVisibility(this.section, this.elementRef);
-    this.isVisible = visibility.isVisible;
-    this.animated = visibility.animated;
+    let elementsStatus = this.browserAnimationsComponent.checkVisibility(this.section, this.elementRef);
+    for (let i = 0; i < elementsStatus.length; i++) {
+      if (elementsStatus[i].isVisible && !this.animationPlayed[i]) {
+        this.animationPlayed[i] = true;
+      }
+      if (this.animationPlayed[i]) {
+        elementsStatus[i].isVisible = true;
+      }
+    }
+    this.isVisible = elementsStatus.map(element => element.isVisible);
   }
 }
+
 

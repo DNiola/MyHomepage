@@ -3,7 +3,7 @@
         <img class="logo_img" src="../../assets/icons/logo.png">
     </a>
     <div class="header_links" >
-        <a *ngFor="let link of headerLinks; let i = index;" (click)="decorationLink(i)" routerLink="/"
+        <a *ngFor="let link of headerLinks; let i = index;" (click)="decorationLink(i)" routerLink="/" 
             [ngStyle]="{'right.px': 20 + (i * 100)}" [ngClass]="{'active': i === activeLink}">
             {{link}}
             <div *ngIf="linkDecoration[i]" class="blue_line"></div>
@@ -23,8 +23,8 @@
                         <img src="../../assets/icons/close-menu.svg">
                     </div>
                 </div>
-                <a class="example-menu-item" cdkMenuItem *ngFor="let link of headerLinksMobile; let i = index;"
-                    (click)="decorationLink(i) " [ngStyle]="{'right.px': 20 + (i * 100)}" routerLink="/"
+                <a class="example-menu-item"  routerLink="/" cdkMenuItem *ngFor="let link of headerLinksMobile; let i = index;"
+                    (click)="decorationLink(i) " [ngStyle]="{'right.px': 20 + (i * 100)}" 
                     [ngClass]="{'active': i === activeLink}">
                     <b>{{link}}</b>
                     <div *ngIf="linkDecoration[i]" class="blue_line"></div>

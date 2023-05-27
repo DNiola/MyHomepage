@@ -5,9 +5,6 @@ $color-purple: #9747FF;
 $color-purple2: #4B47FF;
 $button-blue: #00BEE8;
 
-$media-query-w2100: 2100px;
-$media-query-w1750: 1750px;
-
 
 .contact_main_container {
     color: white;
@@ -40,20 +37,12 @@ $media-query-w1750: 1750px;
         justify-content: center;
     }
 
-    @media screen and (max-width: 376px) {
-        height: calc(140vh - 100px);
-    }
-
-    @media screen and (max-height: 480px) {
-        height: calc(200vh - 100px) !important;
-    }
-
     @media screen and (orientation:landscape) and (max-height: 830px) {
-        height: calc(120vh - 100px) !important;
+        height: calc(120vh - 100px)
     }
 
-    @media screen and (orientation:landscape) and (max-height: 800px) {
-        height: calc(100vh - 100px) !important;
+    @media screen and (max-height: 590px) and (min-height: 370px) {
+        height: calc(160vh - 100px) !important;
     }
 
     @media screen and (orientation:landscape) and (max-height: 770px) and (max-width: 1024px) {
@@ -62,10 +51,6 @@ $media-query-w1750: 1750px;
 
     @media screen and (orientation:landscape) and (max-height: 750px) {
         height: calc(270vh - 100px) !important;
-    }
-
-    @media screen and (orientation:landscape) and (max-height: 610px) {
-        height: calc(160vh - 100px) !important;
     }
 
     @media screen and (orientation:landscape) and (max-height: 550px) {
@@ -261,7 +246,7 @@ form {
     }
 
     @media screen and (max-height: 1024px) {
-        gap: 20px;
+        gap: 10px;
     }
 }
 
@@ -285,11 +270,11 @@ input {
         color: white;
     }
 
-    @media screen and (max-width: $media-query-w2100) {
+    @media screen and (max-width: 2100px) {
         width: 700px;
     }
 
-    @media screen and (max-width: $media-query-w1750) {
+    @media screen and (max-width: 1750px) {
         width: 550px;
     }
 
@@ -352,11 +337,22 @@ textarea {
         outline: none;
     }
 
-    @media screen and (max-width: $media-query-w2100) {
+
+    @media screen and (max-height: 1150px) and (max-width: 1250px) {
+        max-height: 150px;
+        height: 150px;
+    }
+
+    @media screen and (max-height: 920px) and (max-width: 860px) {
+        max-height: 50px;
+        height: 50px;
+    }
+
+    @media screen and (max-width: 2100px) {
         width: 750px;
     }
 
-    @media screen and (max-width: $media-query-w1750) {
+    @media screen and (max-width: 1750px) {
         width: 600px;
     }
 
@@ -376,16 +372,6 @@ textarea {
     @media screen and (max-width: 400px) {
         max-height: 58px;
         width: calc(100vw - 30px) !important;
-    }
-
-    @media screen and (max-height: 1000px) {
-        max-height: 150px;
-        height: 150px;
-    }
-
-    @media screen and (max-height: 1024px) {
-        max-height: 124px;
-        height: 124px;
     }
 }
 
@@ -414,11 +400,11 @@ textarea:placeholder-shown {
         width: calc(100vw - 270px) !important;
     }
 
-    @media screen and (max-width: $media-query-w2100) {
+    @media screen and (max-width: 2100px) {
         width: 600px;
     }
 
-    @media screen and (max-width: $media-query-w1750) {
+    @media screen and (max-width: 1750px) {
         width: 500px;
     }
 
@@ -480,8 +466,12 @@ textarea:placeholder-shown {
 
 
 .emailSendTrue {
-    font-size: 11px;
+    font-size: 16px;
     color: #70e61c;
+
+    @media screen and (max-width: 800px) {
+        font-size: 12px;
+    }
 
     @media screen and (max-width: 500px) {
         font-size: 10px;
@@ -489,5 +479,79 @@ textarea:placeholder-shown {
 
     @media screen and (max-width: 400px) {
         font-size: 9px;
+    }
+}
+
+.email_send_img {
+
+    position: absolute;
+}
+
+
+.slide-in-bl {
+    animation: slide-in-bl 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+
+@media screen and (min-width: 1600px) {
+    @keyframes slide-in-bl {
+        0% {
+            transform: translateY(1000px) translateX(-1000px);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateY(-500px) translateX(1000px);
+            opacity: 1;
+        }
+
+    }
+}
+
+@media screen and (max-width: 1600px) {
+
+
+    @keyframes slide-in-bl {
+        0% {
+            transform: translateY(1000px) translateX(-1000px);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateY(-300px) translateX(500px);
+            opacity: 1;
+            width: 300px;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    @keyframes slide-in-bl {
+        0% {
+            transform: translateY(1000px) translateX(-1000px);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateY(-350px) translateX(300px);
+            opacity: 1;
+            width: 200px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    @keyframes slide-in-bl {
+        0% {
+            transform: translateY(1000px) translateX(-1000px);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateY(0px) translateX(0px);
+            opacity: 1;
+            width: 200px;
+        }
     }
 }
