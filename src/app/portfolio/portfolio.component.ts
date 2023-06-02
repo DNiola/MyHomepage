@@ -40,28 +40,28 @@ export class PortfolioComponent {
       imgs: 'join',
       img: 'join-full2',
       title: 'JOIN - Team Kanban Board',
-      url: 'davide-niola.developerakademie.net/Join/index.html',
+      url: 'www.davide-niola.developerakademie.net/Join/index.html',
       git: 'github.com/DNiola/Join',
-      info: "    My easy - to - use web application JOIN Online Kanban Project Manager allows you and your team to manage tasks, projects and deadlines.Organize your work with custom boards and contact lists, create task cards and assign them to team members.      ",
+      info: "My easy - to - use web application JOIN Online Kanban Project Manager allows you and your team to manage tasks, projects and deadlines.Organize your work with custom boards and contact lists, create task cards and assign them to team members.      ",
       subInfo: "JavaScript | HTML | CSS"
     },
     {
       imgs: 'pepe',
       img: 'pepe-full2',
       title: 'PEPE - El Pollo Loco',
-      url: 'davide-niola.developerakademie.net/pepe/index.html',
+      url: 'www.davide-niola.developerakademie.net/pepe/index.html',
       git: 'github.com/DNiola/El-Polo-Loco',
       info: "In my exciting 2D game, you take on the role of Pepe, a brave hero tasked with saving the little chickens from the menacing Boss Chicken.Collect coins to increase your strength and bottles to defeat the boss, but use them sparingly!",
       subInfo: "JavaScript | HTML | CSS"
     },
     {
-      imgs: 'pokedex',
-      img: 'pokedex-full',
-      title: 'Pokemon - Pokedex',
-      url: 'davide-niola.developerakademie.net/pokedex/index.html',
-      git: 'github.com/DNiola/pokedex',
-      info: "My interactive Pokédex web application provides a comprehensive collection of Pokémon information. It allows you to search for your favorite Pokémon and explore their abilities, types, and stats. Thanks to the built-in real-time API, the data is always up to date, so you'll be well informed about the world of Pokémon.",
-      subInfo: "JavaScript | HTML | CSS | API"
+      imgs: 'ringOfFire',
+      img: 'ring-of-fire',
+      title: 'Ring Of Fire - Game',
+      url: '//ringoffire-6553c.web.app/',
+      git: 'github.com/DNiola/ringOffFire',
+      info: "The ring of fire drinking game is an easy and popular game that can be played with a group of friends. My game is coding with angular and runs on firebase.",
+      subInfo: "TypeScript | SCSS | Angular | Firebase"
     }, { // fehlt noch komplett
       imgs: 'pokedex',
       img: 'pepe-full',
